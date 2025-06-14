@@ -1,13 +1,12 @@
 
 import React from "react";
-import { useCart } from "@/contexts/CartContext";
 import { Link } from "react-router-dom";
 import { Product } from "@/pages/Index";
 
 const ProductCard: React.FC<{
   product: Product;
   onAddToCart: () => void;
-}> = ({ product, onAddToCart }) => {
+}> = React.memo(({ product, onAddToCart }) => {
   const { title, price, image, id, rating } = product;
 
   return (
@@ -44,5 +43,5 @@ const ProductCard: React.FC<{
       </div>
     </div>
   );
-};
+});
 export default ProductCard;

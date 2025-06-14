@@ -11,6 +11,7 @@ export type Product = {
   title: string;
   price: number;
   image: string;
+  images?: string[]; // add images array for multiple photos
   category: string;
   rating?: number;
   description?: string;
@@ -23,6 +24,11 @@ export const products: Product[] = [
     title: "Running Shoes",
     price: 99,
     image: "/lovable-uploads/photo-1518770660439-4636190af475.jpeg",
+    images: [
+      "/lovable-uploads/photo-1518770660439-4636190af475.jpeg",
+      "/lovable-uploads/photo-1618160702438-9b02ab6515c9",
+      "/lovable-uploads/photo-1493962853295-0fd70327578a"
+    ],
     category: "Clothing",
     rating: 4,
     description: "Comfortable running shoes for all-day use.",
@@ -33,6 +39,10 @@ export const products: Product[] = [
     title: "Wireless Headphones",
     price: 129,
     image: "/lovable-uploads/photo-1531297484001-80022131f5a1.jpeg",
+    images: [
+      "/lovable-uploads/photo-1531297484001-80022131f5a1.jpeg",
+      "/lovable-uploads/photo-1582562124811-c09040d0a901"
+    ],
     category: "Electronics",
     rating: 5,
     description: "Experience high-quality sound without wires.",
@@ -43,6 +53,9 @@ export const products: Product[] = [
     title: "Backpack",
     price: 59,
     image: "/lovable-uploads/photo-1460925895917-afdab827c52f.jpeg",
+    images: [
+      "/lovable-uploads/photo-1460925895917-afdab827c52f.jpeg"
+    ],
     category: "Clothing",
     rating: 4,
     description: "Stylish and spacious backpack for everyday needs.",
@@ -53,6 +66,10 @@ export const products: Product[] = [
     title: "Smartwatch",
     price: 249,
     image: "/lovable-uploads/photo-1488590528505-98d2b5aba04b.jpeg",
+    images: [
+      "/lovable-uploads/photo-1488590528505-98d2b5aba04b.jpeg",
+      "/lovable-uploads/photo-1618160702438-9b02ab6515c9"
+    ],
     category: "Electronics",
     rating: 5,
     description: "Your health companion on your wrist.",
@@ -63,6 +80,10 @@ export const products: Product[] = [
     title: "Sunglasses",
     price: 149,
     image: "/lovable-uploads/photo-1487058792275-0ad4aaf24ca7.jpeg",
+    images: [
+      "/lovable-uploads/photo-1487058792275-0ad4aaf24ca7.jpeg",
+      "/lovable-uploads/photo-1535268647677-300dbf3d78d1"
+    ],
     category: "Clothing",
     rating: 4,
     description: "UV protected, stylish sunglasses for all seasons.",
@@ -73,6 +94,9 @@ export const products: Product[] = [
     title: "Digital Camera",
     price: 499,
     image: "/lovable-uploads/photo-1531297484001-80022131f5a1.jpeg",
+    images: [
+      "/lovable-uploads/photo-1531297484001-80022131f5a1.jpeg"
+    ],
     category: "Electronics",
     rating: 5,
     description: "Capture your moments with clarity.",
@@ -83,6 +107,9 @@ export const products: Product[] = [
     title: "T-shirt",
     price: 29,
     image: "/lovable-uploads/photo-1460925895917-afdab827c52f.jpeg",
+    images: [
+      "/lovable-uploads/photo-1460925895917-afdab827c52f.jpeg"
+    ],
     category: "Clothing",
     rating: 3,
     description: "Soft, high-quality cotton t-shirt.",
@@ -93,6 +120,9 @@ export const products: Product[] = [
     title: "Smartphone",
     price: 699,
     image: "/lovable-uploads/photo-1488590528505-98d2b5aba04b.jpeg",
+    images: [
+      "/lovable-uploads/photo-1488590528505-98d2b5aba04b.jpeg"
+    ],
     category: "Electronics",
     rating: 5,
     description: "Sleek design, stellar performance.",

@@ -3,6 +3,13 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { useCart } from "@/contexts/CartContext";
 import { products } from "./Index";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -18,10 +25,35 @@ const ProductDetail = () => {
     );
   }
 
+  // If there are multiple images, use them; else fallback to old image field
+  const images =
+    (product.images && product.images.length > 0)
+      ? product.images
+      : [product.image];
+
   return (
     <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 mt-14 bg-white rounded-xl shadow-lg p-8">
-      <div className="flex flex-col items-center justify-center">
-        <img src={product.image} alt={product.title} className="max-w-xs w-full object-contain rounded-xl border" />
+      <div className="flex flex-col items-center justify-center w-full">
+        <Carousel className="w-full max-w-xs">
+          <CarouselContent>
+            {images.map((img, idx) => (
+              <CarouselItem key={img}>
+                <img
+                  src={img}
+                  alt={product.title}
+                  className="w-full max-h-72 object-contain rounded-xl border bg-gray-100"
+                  loading={idx === 0 ? "eager" : "lazy"}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          {images.length > 1 && (
+            <>
+              <CarouselPrevious />
+              <CarouselNext />
+            </>
+          )}
+        </Carousel>
       </div>
       <div className="flex flex-col space-y-4">
         <h1 className="text-3xl font-bold text-gray-900">{product.title}</h1>
